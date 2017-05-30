@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ImdbApiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Film">
+    <Key>
+      <PropertyRef Name="Title" />
+      <PropertyRef Name="Plot" />
+      <PropertyRef Name="Poster" />
+      <PropertyRef Name="TitleID" />
+    </Key>
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Plot" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Poster" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="TitleID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ImdbApiEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Film" EntityType="Self.Film" />
+  </EntityContainer>
+</Schema>

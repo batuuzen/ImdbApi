@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "MyFilm";
+}
+
+
+@if (Session["LogedUserFullname"] != null)
+{
+    <text>
+        Welcome @Session["LogedUserFullname"].ToString()
+    </text>
+}
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <style>
+         table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+    </style>
+    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+
+    <script src="~/Scripts/MyFilm.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <table id="tblctg">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>FİLM ADI</th>
+                <th>Açıklaması</th>
+                <th> <input type="button" value="sil" id="btSeciliKayitlariSil" /></th>
+            </tr>
+            
+        </thead>
+        <tbody id="location"></tbody>
+
+    </table>
+</body>
+</html>

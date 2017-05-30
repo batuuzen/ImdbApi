@@ -1,0 +1,71 @@
+﻿@model MvcImdb.User
+
+@{
+    ViewBag.Title = "Login";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .tablo{
+            
+            
+           margin-top:60px;  
+           margin-left:370px;
+           text-align: center; 
+            border: 2px; 
+            border-style: solid; 
+            width:400px;
+            background-color:#b6aeae;
+            padding:40px;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/login.css" rel="stylesheet" />
+
+    <title>Index</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card card-container">
+@using (Html.BeginForm("Login", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    if (@ViewBag.Message != null)
+    {
+        <div style="border: 1px solid red">
+            @ViewBag.Message
+        </div>
+    }
+    <img id="profile-img" class="profile-img-card" src="~/resimler/login.jpg" />
+    <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" id="inputEmail" name="UserName"class="form-control" placeholder="Kullanıcı Adı" required autofocus>
+                <input type="password" id="inputPassword" name="Password" class="form-control" placeholder="Password" required>
+             
+                    
+
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+            </form>
+            
+}
+            </div>
+
+        </div>
+
+            
+</body>
+</html>
+@* This below line is for create javascript section *@
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

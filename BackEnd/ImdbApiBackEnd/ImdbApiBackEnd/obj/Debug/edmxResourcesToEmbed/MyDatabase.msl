@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ImdbApiModelStoreContainer" CdmEntityContainer="ImdbApiEntities2">
+    <EntitySetMapping Name="Film4">
+      <EntityTypeMapping TypeName="ImdbApiModel.Film4">
+        <MappingFragment StoreEntitySet="Film4">
+          <ScalarProperty Name="ImdbID" ColumnName="ImdbID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Plot" ColumnName="Plot" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

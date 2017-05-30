@@ -1,0 +1,61 @@
+﻿@model MvcImdb.User
+
+@{
+    ViewBag.Title = "AfterLogin";
+}
+
+
+@if (Session["LogedUserFullname"] != null)
+{
+    <text>
+        Welcome @Session["LogedUserFullname"].ToString()
+    </text>
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+
+    <script src="~/Scripts/imdb.js"></script>
+
+    @*  <script src="~/scripts/ImdbAdd.js"></script>*@
+    <style>
+        #results td {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript"></script>
+    <div class="container">
+
+    <h1>SEARCH IMDB</h1>
+        <input type="text" id="movieTitle" class="form-control" placeholder="film adı" />
+        <button id="searchMovie" class="btn btn-primary btn-block">Search</button>
+        <h2>Sonuçlar</h2>
+        <table id="results" class="table table-striped">
+            @*<input type="text" name="imdbid" id="imdbid" />
+            <br>
+            <input type="text" name="title" id="title" />
+            <br>*@
+            <thead>
+                <tr>
+                    <th>ImdbId</th>
+                    <th>Title</th>
+                    <th>Plot</th>
+                    <th>Poster</th>
+                    <th><button id="btnAdd">Kaydet</button></th>
+                </tr>
+            </thead>
+            <tbody id="container"></tbody>
+
+        </table>
+    </div>
+
+</body>
+</html>
